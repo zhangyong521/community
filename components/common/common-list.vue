@@ -1,7 +1,7 @@
 <template>
 	<view>
+		<!-- 封装的列表 -->
 		<view class="p-2">
-
 			<!-- 头像昵称 / 关注按钮-->
 			<view class="flex align-center justify-between">
 				<!-- 左边头像昵称/时间 -->
@@ -59,9 +59,8 @@
 					<!-- 图标 -->
 					<text class="iconfont icon-fenxiang mr-2"></text>
 					<!-- 名称 -->
-					<text>{{item.share_num> 0 ? item.share_num: '分享'}}</text>
+					<text>{{item.share_num > 0 ? item.share_num : '分享'}}</text>
 				</view>
-
 			</view>
 		</view>
 	</view>

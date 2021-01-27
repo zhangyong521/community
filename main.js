@@ -3,13 +3,17 @@ import App from './App'
 
 Vue.config.productionTip = false
 
-//引入全局组件
+//引入全局组件（这里引用，文档里全部可以使用）
+// 分割线
 import divider from './components/common/divider.vue'
-Vue.component('divider',divider)
+Vue.component('divider', divider)
+// 无内容
+import noThing from './components/common/no-thing.vue'
+Vue.component('no-thing', noThing)
 
 App.mpType = 'app'
 
 const app = new Vue({
-    ...App
+	...App
 })
 app.$mount()
