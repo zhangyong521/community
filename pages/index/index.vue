@@ -6,7 +6,7 @@
 			<view v-for="(item,index) in tabBars" :key="index" :id="'tab'+index" class="scroll-row-item px-3 py-2 font-md"
 			 :class="tabIndex===index?'text-main font-lg font-weight-bold':''" @click="changeTab(index)">{{item.name}}</view>
 		</scroll-view>
-		
+
 		<!-- 关联滑块 -->
 		<swiper :duration="150" :current="tabIndex" @change="onChangeTab" :style="'height:'+scrollH+'px;'">
 			<swiper-item v-for="(item,index) in newsList" :key="index">
@@ -120,7 +120,14 @@
 		onNavigationBarSearchInputClicked() {
 			//点击调转搜索页
 			uni.navigateTo({
-				url:"../search/search"
+				url: "../search/search"
+			})
+		}, 
+		//监听导笔点击事件
+		onNavigationBarButtonTap() {
+			//点击调转搜索页
+			uni.navigateTo({
+				url: "../add-input/add-input"
 			})
 		},
 		onLoad() {
