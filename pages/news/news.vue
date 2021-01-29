@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!-- 自定义导航 -->
-		<uni-nav-bar :statusBar="true" :border="true" :flexd="true" @clickRight="openAddInput">
+		<uni-nav-bar :statusBar="true" :border="false" :flexd="true" @clickRight="openAddInput">
 			<view class="flex justify-center align-center font-weight-bold w-100">
 				<view class="font-md text-light-muted mx-1" @click="changeTab(index)" v-for="(item,index) in tabBars" :key="index"
 				 :class="tabIndex === index ? 'font-lg text-main':'font-md text-light-muted'">{{item.name}}</view>
@@ -26,7 +26,38 @@
 			<!-- 话题 -->
 			<swiper-item>
 				<scroll-view scroll-y="true" :style="'height:'+scrollH+'px;'">
-					<view>话题</view>
+
+					<!-- 热门分类 -->
+					<hot-cate :hotCate="hotCate"></hot-cate>
+
+					<!-- 搜索框 -->
+					<view class="p-1">
+						<view class="bg-light rounded flex align-center justify-center py-1 text-secondary">
+							<text class="iconfont icon-sousuo mr-1"></text>
+							搜索话题
+						</view>
+					</view>
+
+					<!-- 轮播图 -->
+					<swiper class="px-2 pb-2" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
+						<swiper-item>
+							<image src="/static/demo/banner1.jpg" style="height: 300rpx;" class="w-100 rounded"></image>
+						</swiper-item>
+						<swiper-item>
+							<image src="/static/demo/banner1.jpg" style="height: 300rpx;" class="w-100 rounded"></image>
+						</swiper-item>
+					</swiper>
+					<!-- 分割线 -->
+					<divider></divider>
+
+					<!-- 最近更新 -->
+					<view class="p-2 font">最近更新</view>
+
+					<!-- 话题列表组件 -->
+					<block v-for="(item,index) in topicList" :key="index">
+						<topic-list :item="item" :index="index"></topic-list>
+					</block>
+
 				</scroll-view>
 			</swiper-item>
 		</swiper>
@@ -81,11 +112,15 @@
 	import uniNavBar from '@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue';
 	import commonList from '@/components/common/common-list.vue';
 	import loadMore from '@/components/common/load-more.vue';
+	import hotCate from '@/components/news/hot-cate.vue';
+	import topicList from '@/components/news/topic-list.vue';
 	export default {
 		components: {
 			uniNavBar,
 			commonList,
-			loadMore
+			loadMore,
+			hotCate,
+			topicList
 		},
 		data() {
 			return {
@@ -99,7 +134,35 @@
 				//关注列表
 				list: [],
 				//1.上拉加载更多 2.加载中 3.没有更多了
-				loadmore:"上拉加载更多"
+				loadmore: "上拉加载更多",
+				hotCate: [{
+					name: "关注"
+				}, {
+					name: "不关注"
+				}, {
+					name: "关注一下"
+				}],
+				topicList: [{
+						cover: "/static/demo/topicpic/1.jpeg",
+						title: "话题名称",
+						desc: "话题描述",
+						today_count: 0,
+						news_count: 10
+					},
+					{
+						cover: "/static/demo/topicpic/1.jpeg",
+						title: "话题名称",
+						desc: "话题描述",
+						today_count: 0,
+						news_count: 10
+					}, {
+						cover: "/static/demo/topicpic/1.jpeg",
+						title: "话题名称",
+						desc: "话题描述",
+						today_count: 0,
+						news_count: 10
+					}
+				],
 			}
 		},
 		onLoad() {
@@ -151,18 +214,18 @@
 					title: msg + '成功'
 				})
 			},
-			loadmoreEvent(){
+			loadmoreEvent() {
 				//验证当前是否加载状态
-				if(this.loadmore!=='上拉加载更多') return;
+				if (this.loadmore !== '上拉加载更多') return;
 				//设置加载状态
-				this.loadmore='加载中...'
+				this.loadmore = '加载中...'
 				//模拟请求数据
-				setTimeout(()=>{
+				setTimeout(() => {
 					//加载数据
-					this.list=[...this.list,...this.list]
+					this.list = [...this.list, ...this.list]
 					//设置加载状态
-					this.loadmore='上拉加载更多'
-				},2000)
+					this.loadmore = '上拉加载更多'
+				}, 2000)
 			}
 
 		}
