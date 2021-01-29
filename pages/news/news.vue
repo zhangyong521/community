@@ -136,11 +136,15 @@
 				//1.上拉加载更多 2.加载中 3.没有更多了
 				loadmore: "上拉加载更多",
 				hotCate: [{
-					name: "关注"
+					name: "关注",
 				}, {
-					name: "不关注"
+					name: '推荐',
 				}, {
-					name: "关注一下"
+					name: '体育',
+				}, {
+					name: '热点',
+				}, {
+					name: '财经',
 				}],
 				topicList: [{
 						cover: "/static/demo/topicpic/1.jpeg",

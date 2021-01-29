@@ -19,7 +19,9 @@
 		props: ['hotCate'],
 		methods:{
 			openMore(){
-				console.log("打开更多")
+				uni.navigateTo({
+					url:"../../pages/topic-nav/topic-nav",
+				})
 			},
 			openDetail(item){
 				console.log("话题详情页")
