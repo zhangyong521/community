@@ -87,6 +87,21 @@
             }
             
         }
+        ,{
+            "path" : "pages/topic-detail/topic-detail",
+            "style" :                                                                                    
+            {
+               "app-plus":{
+				   "titleNView":{
+					   "type":"transparent",
+					   "buttons":[{
+						   "type":"menu"
+					   }]
+				   }
+			   }
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

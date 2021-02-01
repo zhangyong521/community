@@ -1,5 +1,5 @@
 <template>
-	<view class="flex align-center p-2">
+	<view class="flex align-center p-2" @click="open">
 		<image :src="item.cover" style="height: 150rpx;width: 150rpx" class="rounded mr-2"></image>
 		<view class="flex flex-column flex-1">
 			<text class="font-md text-dark">#{{item.title}}#</text>
@@ -14,9 +14,9 @@
 
 <script>
 	export default {
-		props:{
-			item:Object,
-			index:Number
+		props: {
+			item: Object,
+			index: Number
 		},
 		data() {
 			return {
@@ -24,7 +24,11 @@
 			}
 		},
 		methods: {
-
+			open() {
+				uni.navigateTo({
+					url: "../../pages/topic-detail/topic-detail?detail=" + JSON.stringify(this.item)
+				})
+			}
 		}
 	}
 </script>
