@@ -62,8 +62,14 @@
 		}, {
 			"path": "pages/my/my",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "我的",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"type": "menu"
+						}]
+					}
+				}
 			}
 		}, {
 			"path": "pages/search/search",
@@ -149,7 +155,7 @@
 			"path": "pages/user-chat/user-chat",
 			"style": {
 				"app-plus": {
-					"bounce":"none",
+					"bounce": "none",
 					"titleNView": {
 						"buttons": [{
 							"color": "#333333",
@@ -163,8 +169,22 @@
 				}
 			}
 
+		}, {
+			"path": "pages/user-set/user-set",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+
 		}
-	],
+	    ,{
+            "path" : "pages/user-password/user-password",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "修改密码"
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "社区交友",
