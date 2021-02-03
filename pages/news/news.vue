@@ -32,7 +32,7 @@
 
 					<!-- 搜索框 -->
 					<view class="p-1">
-						<view class="bg-light rounded flex align-center justify-center py-1 text-secondary">
+						<view class="bg-light rounded flex align-center justify-center py-1 text-secondary" @click="openSearch">
 							<text class="iconfont icon-sousuo mr-1"></text>
 							搜索话题
 						</view>
@@ -230,6 +230,12 @@
 					//设置加载状态
 					this.loadmore = '上拉加载更多'
 				}, 2000)
+			},
+			//打开搜索页
+			openSearch(){
+				uni.navigateTo({
+					url:"../search/search?type=topic"
+				});
 			}
 
 		}

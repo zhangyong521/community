@@ -29,16 +29,35 @@
 		}, {
 			"path": "pages/news/news",
 			"style": {
-				"app-plus":{
-					"titleNView":false
+				"app-plus": {
+					"titleNView": false
 				}
 			}
 
 		}, {
 			"path": "pages/msg/msg",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "消息列表",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"color": "#333333",
+							"colorPressed": "#FD597C",
+							"float": "left",
+							"fontSize": "22px",
+							"fontSrc": "/static/iconfont.ttf",
+							"text": "\ue611"
+						}, {
+							"color": "#333333",
+							"colorPressed": "#FD597C",
+							"float": "right",
+							"fontSize": "22px",
+							"fontSrc": "/static/iconfont.ttf",
+							"text": "\ue649"
+						}]
+					}
+				}
 			}
 		}, {
 			"path": "pages/my/my",
@@ -74,35 +93,78 @@
 			"path": "pages/add-input/add-input",
 			"style": {
 				"app-plus": {
-					"titleNView":false
+					"titleNView": false
 				}
 			}
+		}, {
+			"path": "pages/topic-nav/topic-nav",
+			"style": {
+				"navigationBarTitleText": "话题分类"
+
+			}
+
+		}, {
+			"path": "pages/topic-detail/topic-detail",
+			"style": {
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent",
+						"buttons": [{
+							"type": "menu"
+						}]
+					}
+				}
+			}
+
+		}, {
+			"path": "pages/user-list/user-list",
+			"style": {
+				"app-plus": {
+					//动画效果
+					"animationType": "slide-in-left",
+					//导航位置
+					"titleNView": {
+						//取消返回按钮
+						"autoBackButton": false,
+						//搜索框配置
+						"searchInput": {
+							"align": "center",
+							"backgroundColor": "#F5F4F2",
+							"borderRadius": "4px",
+							"disabled": true, //表示此页无法搜索
+							"placeholder": "搜索用户",
+							"placeholderColor": "#6D6C67"
+						},
+						"buttons": [{
+							"color": "#333333",
+							"colorPressed": "#FD597C",
+							"float": "right",
+							"fontSize": "15px",
+							"text": "取消"
+						}]
+					}
+				}
+			}
+		}, {
+			"path": "pages/user-chat/user-chat",
+			"style": {
+				"app-plus": {
+					"bounce":"none",
+					"titleNView": {
+						"buttons": [{
+							"color": "#333333",
+							"colorPressed": "#FD597C",
+							"float": "right",
+							"fontSize": "20px",
+							"fontSrc": "/static/iconfont.ttf",
+							"text": "\ue628"
+						}]
+					}
+				}
+			}
+
 		}
-        ,{
-            "path" : "pages/topic-nav/topic-nav",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "话题分类"
-              
-            }
-            
-        }
-        ,{
-            "path" : "pages/topic-detail/topic-detail",
-            "style" :                                                                                    
-            {
-               "app-plus":{
-				   "titleNView":{
-					   "type":"transparent",
-					   "buttons":[{
-						   "type":"menu"
-					   }]
-				   }
-			   }
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "社区交友",
@@ -117,26 +179,26 @@
 		"list": [{
 				"pagePath": "pages/index/index",
 				"text": "首页",
-				"iconPath": "static/tabbar/index.png",
-				"selectedIconPath": "static/tabbar/indexed.png"
+				"iconPath": "./static/tabbar/index.png",
+				"selectedIconPath": "./static/tabbar/indexed.png"
 			},
 			{
 				"pagePath": "pages/news/news",
 				"text": "动态",
-				"iconPath": "static/tabbar/news.png",
-				"selectedIconPath": "static/tabbar/newsed.png"
+				"iconPath": "./static/tabbar/news.png",
+				"selectedIconPath": "./static/tabbar/newsed.png"
 			},
 			{
 				"pagePath": "pages/msg/msg",
 				"text": "消息",
-				"iconPath": "static/tabbar/paper.png",
-				"selectedIconPath": "static/tabbar/papered.png"
+				"iconPath": "./static/tabbar/paper.png",
+				"selectedIconPath": "./static/tabbar/papered.png"
 			},
 			{
 				"pagePath": "pages/my/my",
 				"text": "我的",
-				"iconPath": "static/tabbar/home.png",
-				"selectedIconPath": "static/tabbar/homeed.png"
+				"iconPath": "./static/tabbar/home.png",
+				"selectedIconPath": "./static/tabbar/homeed.png"
 			}
 		]
 	}

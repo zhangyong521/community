@@ -24,4 +24,5 @@
 	@import "./common/free.css";
 	/**全局样式*/
 	@import "./common/common.css";
+	
 </style>

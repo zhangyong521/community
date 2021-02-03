@@ -120,9 +120,9 @@
 		onNavigationBarSearchInputClicked() {
 			//点击调转搜索页
 			uni.navigateTo({
-				url: "../search/search"
+				url: "../search/search?type=post"
 			})
-		}, 
+		},
 		//监听导笔点击事件
 		onNavigationBarButtonTap() {
 			//点击调转搜索页
