@@ -11,6 +11,11 @@ Vue.component('divider', divider)
 import noThing from './components/common/no-thing.vue'
 Vue.component('no-thing', noThing)
 
+
+//引入js
+import $C from './common/config.js'
+Vue.prototype.$C = $C
+
 App.mpType = 'app'
 
 const app = new Vue({

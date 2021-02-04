@@ -1,8 +1,9 @@
 <template>
 	<view>
 
-		<uni-list-item title="账号与安全" showArrow clickable @click="open"></uni-list-item>
-		<uni-list-item title="资料编辑" showArrow></uni-list-item>
+		<uni-list-item title="账号与安全" showArrow clickable @click="open('user-password')"></uni-list-item>
+		<uni-list-item title="绑定邮箱" showArrow clickable @click="open('user-email')"></uni-list-item>
+		<uni-list-item title="资料编辑" showArrow clickable @click="open('user-userinfo')"></uni-list-item>
 		<uni-list-item title="清楚缓存" showArrow></uni-list-item>
 		<uni-list-item title="意见反馈" showArrow></uni-list-item>
 		<uni-list-item title="关于社区" showArrow></uni-list-item>
@@ -28,9 +29,9 @@
 			}
 		},
 		methods: {
-			open() {
+			open(path) {
 				uni.navigateTo({
-					url: '../user-password/user-password'
+					url: `../${path}/${path}`
 				});
 			}
 		}

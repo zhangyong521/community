@@ -184,6 +184,22 @@
             }
             
         }
+        ,{
+            "path" : "pages/user-email/user-email",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "绑定邮箱"
+            }
+            
+        }
+        ,{
+            "path" : "pages/user-userinfo/user-userinfo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "修改资料"
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
